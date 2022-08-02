@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles/style.css">
+    <title>PartyLoyalty-House</title>
+</head>
+
+<body>
+
+    <section>
+        <div class="justify-content-between  ">
+            <div class="top_nav">
+                
+                <div class="col-5 ">
+                    <div class="p-3 ">
+                        <h3>Data Insight Group </h3>
+                    </div>
+                </div>
+                <div class="info_email ">
+
+                    <div class="p-3 col-6  d-flex ">
+                        <div class=" col-md-2 ">
+                            <img class="img-fluid text"
+                                src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="">
+                        </div>
+                        <h3 class="img-fluid text-primary"><u> info@DataInsightGroup.net</u> </h3>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <nav class="navbar navbar-expand-lg ">
+        <div class="container-fluid">
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.html">Home</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Congress
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="./house-data.html">House</a></li>
+                            <li><a class="dropdown-item" href="./senate-data.html">Senate</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Attendance
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="./Attendance_House.html">House</a></li>
+                            <li><a class="dropdown-item" href="./Attendance_Senate.html">Senate</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Party Loyalty
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="./Party_House.html">House</a></li>
+                            <li><a class="dropdown-item" href="./Party_Senate.html">Senate</a></li>
+
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <label class="switch">
+                <input type="checkbox" id="slider" checked>
+                <span class="slider"></span>
+               </label>
+        </div>
+    </nav>
+    <br>
+    <main class="main" id="listaH">
+        
+        
+            <!-- INICIO DE LA SECCION 1  -->
+            <section class="col-12  d-md-flex ">
+                <article class="col-md-6 col-12">
+                  <!-- <img class="imagen col-5" src="https://cdnuploads.aa.com.tr/uploads/Contents/2021/04/10/thumbs_b_c_232729705a797c04ac941b21336dd92a.jpg?v=010111 " alt=""> -->
+                  <div class=" col-8" > 
+                    <h2>Party Loyalty</h2>
+
+                    <p>Those who consider themselves to be strong partisans, strong Democrats and strong Republicans respectively, tend to be the most faithful in voting for their party's nominee for office and legislation that backs their party's agenda. </p>
+                    </div>
+                </article>
+
+                <article class="col-md-6 col-10 container_Party">
+                    <caption>
+                        <h4>House at a glance </h4>
+                    </caption>
+                    <table class="table   ">
+                        <thead>
+                            <tr>
+                                <th scope="col">Party</th>
+                                <th scope="col">No of Reps </th>
+                                <th scope="col">%Voted w/ Party</th>
+
+                            </tr>
+                        </thead>
+                        <tbody id="tbody">
+                            <tr>
+                                <th>Democrates</th>
+                                <td class="body">{{allGlance.democrats.length}}</td>
+                                <td>{{total_D}}%</td>
+
+                            </tr>
+                            <tr>
+                                <th scope="row">Republicans</th>
+                                <td class="body">{{allGlance.republicans.length}}</td>
+                                <td id="prom_R">{{total_R}}%</td>
+
+
+                            </tr>
+                            <tr>
+                                <th scope="row">Independent</th>
+                                <td class="body">{{allGlance.independents.length}}</td>
+                                <td id="prom_R">{{total_ID}}%</td>
+                            </tr>
+                            <tr>
+                                <td class="body_name">Total</td>
+                                <td class="body">{{allGlance.democrats.length + allGlance.republicans.length + allGlance.independents.length}}</td>
+                               
+                                <td> {{this.promedioTotal}}%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </article>
+                
+             
+            </section>
+            <!-- FIN DE LA SECCION 1 -->
+            
+            <!-- INICIO DE LA SECCION 2  -->
+            
+        <!-- FIN DE LA SECCION 2  -->
+       
+
+   
+<div class="main2"> 
+                <section class="col-12  d-md-flex ">
+                        
+                        <article class="col-md-6 col-12 container_Party ">
+                            <!-- <caption>Least Engaged (Bottom 10% Attendance)</caption> -->
+                            <caption>
+                                <h4 class=" ">Least Loyal (Bottom 10% of Party) </h4>
+                            </caption>
+                            <table class="table ml-2 ">
+                                <thead class=" text-white">
+                                    <tr>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">No, Party Votes </th>
+                                        <th scope="col">% Party Votes</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody id="tabla_most">
+                                    <tr v-for="member in leastLoyalty" v-if="leastLoyalty.length > 0">
+                                        <td ><a :href="member.url" >{{member.first_name}} {{member.middle_name}} {{member.last_name}}</a></td>
+                                        <td>{{member.total_votes}}</td>
+                                        <td>{{member.votes_with_party_pct}} %</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </article>
+                    
+                    <!-- contenedor 3  -->
+                    
+                        <article class="col-md-6 col-12 container_Party ">
+                            <caption>
+                                <h4 class="">Most Loyal (Top 10% of Party) </h4>
+                            </caption>
+                            <table class="table m-2 ">
+                                <thead >
+                                    <tr>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">No, Party Votes </th>
+                                        <th scope="col">Party Votes</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody id="tabla">
+                                    <tr v-for="member in mostLoyalty" v-if="mostLoyalty.length > 0">
+                                        <td class="body_name"><a :href="member.url" class="body_name">{{member.first_name}} {{member.middle_name}} {{member.last_name}}</a></td>
+                                        <td class="body">{{member.total_votes}}</td>
+                                        <td class="body">{{member.votes_with_party_pct}} %</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </article>
+                </section>
+            </div>
+    
+        </main>
+            <footer> 
+                <div class="container px-4">
+                  <div class="row gx-5">
+                    <div class="col">
+                      <div class="p-3 border">© 2021 Data Insight Group | All Rights Reserved </div>
+                    </div>
+              
+                  </div>
+                </div>
+              </footer>
+    <section>
+
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+    integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous">
+  </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+        integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous">
+    </script>
+
+<script src="https://unpkg.com/vue@3"></script>
+    <script src="./script/house.js"></script>
+    <script src="./script/senate.js"></script>
+    <script src="./script/app2.js"></script>
+</body>
+
+</html>
